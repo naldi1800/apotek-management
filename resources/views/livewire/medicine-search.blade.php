@@ -21,7 +21,7 @@
                 @foreach ($medicines as $index => $medicine)
                     <tr>
                         <td>{{ $index + 1 }}</td>
-                        <td>{{ $medicine->generic_name }}</td>
+                        <td>{{ $medicine->generic_name . '-' . $medicine->brand_name }}</td>
                         <td>Rp {{ number_format($medicine->selling_price, 2, ',', '.') }}</td>
                         <td>
                             {{-- @dd($medicine) --}}
