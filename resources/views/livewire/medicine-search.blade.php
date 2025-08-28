@@ -24,7 +24,8 @@
                         <td>{{ $medicine->generic_name }}</td>
                         <td>Rp {{ number_format($medicine->selling_price, 2, ',', '.') }}</td>
                         <td>
-                            @if($medicine->stock > 0)
+                            {{-- @dd($medicine) --}}
+                            @if($medicine->stock->count() > 0)
                                 <button wire:click.prevent="addToBasketButton({{$medicine->id}})" class="btn btn-success">
                                     Tambah
                                 </button>

@@ -15,8 +15,7 @@ class Medicine extends Model
         'bpom_number',
     ];
 
-    public function stock()
-    {
-        return $this->belongsToMany(Stock::class);
+    public function stock() {
+        return $this->hasMany(Stock::class);
     }
 }

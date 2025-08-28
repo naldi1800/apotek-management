@@ -29,6 +29,7 @@ class MedicineSearch extends Component
         }
 
         $this->medicines = Medicine::with('stock')->where('generic_name', 'like', '%' . $this->search . '%')->orWhere('brand_name', 'like', '%' . $this->search . '%')->get();
+        // dd($this->medicines);
     }
 
     public function addToBasketButton($medicineId)
