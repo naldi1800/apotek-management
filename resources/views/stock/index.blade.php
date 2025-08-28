@@ -33,7 +33,7 @@
                         @foreach ($stocks as $stock)
                             <tr class="text-center">
                                 <th scope="row">{{ $loop->iteration }}</th>
-                                <td class="text-start">{{ $stock->medicine->generic_name ?? '-' }}</td>
+                                <td class="text-start">{{ $stock->medicine->generic_name . '-' . $stock->medicine->brand_name }}</td>
                                 <td>{{ $stock->batch_number }}</td>
                                 <td>{{ $stock->expiry_date }}</td>
                                 <td>{{ $stock->stock_date }}</td>
