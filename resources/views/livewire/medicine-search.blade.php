@@ -1,6 +1,7 @@
 <div>
     <div class="mb-3 row">
-        <input type="text" class="form-control col-8" name="search" placeholder="Cari barang..." wire:model.live.debounce.300ms="search">
+        <input type="text" class="form-control col-8" name="search" placeholder="Cari barang..."
+            wire:model.live.debounce.300ms="search">
         {{-- <button wire:click="searchFromEvent" class="btn btn-secondary col-2">
             Search
         </button> --}}
@@ -23,9 +24,15 @@
                         <td>{{ $medicine->generic_name }}</td>
                         <td>Rp {{ number_format($medicine->selling_price, 2, ',', '.') }}</td>
                         <td>
-                            <button wire:click.prevent="addToBasketButton({{$medicine->id}})" class="btn btn-success">
-                                Tambah
-                            </button>
+                            @if($medicine->stock > 0)
+                                <button wire:click.prevent="addToBasketButton({{$medicine->id}})" class="btn btn-success">
+                                    Tambah
+                                </button>
+                            @else
+                                <button class="btn btn-danger" disabled>
+                                    Stock Tidak Tersedia
+                                </button>
+                            @endif
                         </td>
                     </tr>
                 @endforeach

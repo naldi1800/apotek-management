@@ -86,7 +86,7 @@
                 @foreach ($datas as $d)
                     <tr class="text-center text-align-middle text-capitalize">
                         <td>{{ $loop->index + 1 }}</td>
-                        <td>{{ $d->medicine->generic_name }}</td>
+                        <td>{{ $d->medicine->generic_name . "-" . $d->medicine->brand_name  }}</td>
                         <td>{{ $d->stock->batch_number }}</td>
                         <td>{{ $d->type }}</td>
                         <td>{{ $d->quantity }}</td>
